@@ -80,6 +80,7 @@ int main(int, char **)
   int yearcode = MM - month;
   // year1 jako pierwsze 2 cyfry roku, czyli stulecie
   int year1;
+  std::string months[12] = {"styczeń", "luty", "marzec", "kwieceń", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"};
 
   if (yearcode == 80)
   {
@@ -104,7 +105,7 @@ int main(int, char **)
 
   int year = year1 + (pesel[0] - '0') * 10 + (pesel[1] - '0');
 
-  std::cout << "data urodzenia to: " << day << "." << month << "." << year << " roku" << std::endl;
+  std::cout << "data urodzenia to: " << day << "." << months[month - 1] << "." << year << " roku" << std::endl;
 
   return 0;
 }
